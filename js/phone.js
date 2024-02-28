@@ -39,7 +39,7 @@ const displayPhones = (phones, isShowAll) => {
         phoneCard.innerHTML = `<figure><img src="${phone.image}" alt="Shoes" /></figure>
         <div class="card-body">
           <h2 class="card-title">${phone.phone_name}</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <p>There are many variations of passages of available, but the majority have suffered</p>
           <p class="text-center text-2xl font-bold"> $999</p>
 
           <div class="card-actions justify-center">
