@@ -41,6 +41,7 @@ const displayPhones = (phones, isShowAll) => {
           <h2 class="card-title">${phone.phone_name}</h2>
           <p>If a dog chews shoes whose shoes does he choose?</p>
           <p class="text-center text-2xl font-bold"> $999</p>
+
           <div class="card-actions justify-center">
             <button onclick="handleShowDetail('${phone.slug}')" class="btn btn-primary">Show Details</button>
           </div>
@@ -72,12 +73,19 @@ const showPhoneDetails = (phone) =>{
     const showDeailContainer = document.getElementById('show-deail-container');
     showDeailContainer.innerHTML = `
     <img class="m-auto p-2" src="${phone?.image}" alt="" />
-    <p> <span>Storage:</span>${phone?.mainFeatures?.storage
-    }</p>
-    <p><span>GPS : </span>${phone.others?.GPS || 'No GPS'}</p>
-    <p><span>GPS : </span>${phone.others?.GPS ? phone.others.getElementById: 'No GPS avaible in this device'}</p>
-    `
+    <p> <span class="font-bold text-lg">Storage : </span>${phone?.mainFeatures?.storage}</p>
+    <p><span class="font-bold text-lg">Display Size : </span>${phone?.mainFeatures?.displaySize}</p>
+    <p><span class="font-bold text-lg">Chipset : </span>${phone?.mainFeatures?.chipSet}</p>
 
+    <p><span class="font-bold text-lg">Memory : </span>${phone?.mainFeatures?.memory}</P>
+    <p><span class="font-bold text-lg">Slug : </span>${phone?.slug || 'No Sulg found'}</P>
+    <p><span class="font-bold text-lg">Release data : </span>${phone?.releaseDate || 'No Release Date found'}</P>
+    <p><span class="font-bold text-lg">Brand : </span>${phone?.brand || 'No Brand found'}</P>
+    
+    <p><span class="font-bold text-lg">GPS : </span>${phone.others?.GPS || 'No GPS'}</p>
+    `
+    // another system to append
+    // <p><span>GPS : </span>${phone.others?.GPS ? phone.others.GPS: 'No GPS avaible in this device'}</p>
 
     // show the modal
     show_details_modal.showModal();
